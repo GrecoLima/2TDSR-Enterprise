@@ -13,27 +13,27 @@ public class Teste {
 		// Instanciar um cliente
 		Cliente cliente = new Cliente();
 
-		// API de Reflection para recuperar os métodos
+		// API de Reflection para recuperar os metodos
 		Method[] metodos = cliente.getClass().getDeclaredMethods();
 		for (int i = 0; i < metodos.length; i++) {
 			System.out.println(metodos[i].getName());
 		}
-		
+	
 		//Recuperar os atributos
 		Field[] atributos = cliente.getClass().getDeclaredFields();
 		for (Field item : atributos) {
 			System.out.println(item.getName());
-			//recuperar a anotação @Coluna
+			//recuperar a anotacao @Coluna
 			Coluna anotacao = item.getAnnotation(Coluna.class);
 			System.out.println("Coluna: " + anotacao.nome());
-			System.out.println("Obritagório: " + anotacao.obrigatorio());
+			System.out.println("Obrigatorio: " + anotacao.obrigatorio());
 		}
-		
+	
 		//Exibir o nome da classe
 		System.out.println(cliente.getClass().getName());
 		
-		//Exercício
-		//Recuperar a anotação da classe @Tabela
+		//Exercicio
+		//Recuperar a anotacao da classe @Tabela
 		Tabela anotacao = cliente.getClass().getAnnotation(Tabela.class);
 		System.out.println("SELECT * FROM " + anotacao.nome());
 	}
