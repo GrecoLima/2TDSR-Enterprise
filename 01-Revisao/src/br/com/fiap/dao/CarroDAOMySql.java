@@ -8,6 +8,11 @@ import br.com.fiap.bean.Carro;
 //Uma classe pode implementar uma ou mais interfaces
 public class CarroDAOMySql implements CarroDAO, Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public List<Carro> buscarCarros() {
 		return null;
